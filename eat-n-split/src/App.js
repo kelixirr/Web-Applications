@@ -44,12 +44,12 @@ export default function App() {
     setFriends((friends) =>
       friends.map((friend) =>
         friend.id === selectedFriend.id
-          ? {...friend, balance: friend.balance + value }
+          ? { ...friend, balance: friend.balance + value }
           : friend
       )
     );
 
-    setselectedFriend(null); 
+    setselectedFriend(null);
   }
 
   return (
@@ -69,6 +69,7 @@ export default function App() {
         <FormSplitBill
           selectedFriend={selectedFriend}
           onSplitBill={handleSplitBill}
+          key={selectedFriend.id}
         />
       )}
     </div>
