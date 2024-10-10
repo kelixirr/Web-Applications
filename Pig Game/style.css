@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   height: 100vh;
@@ -20,6 +21,28 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 4rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.footer-link:active,
+.footer-link:hover,
+.footer-link:visited,
+.footer-link:link {
+  text-decoration: none;
+  color: #fff;
+  border-bottom: 1px solid #ecbfc1;
 }
 
 /* LAYOUT */
@@ -66,9 +89,11 @@ main {
 .player--active {
   background-color: rgba(255, 255, 255, 0.4);
 }
+
 .player--active .name {
   font-weight: 700;
 }
+
 .player--active .score {
   font-weight: 400;
 }
@@ -132,11 +157,17 @@ main {
 .btn--new {
   top: 4rem;
 }
+
 .btn--roll {
   top: 39.3rem;
 }
+
 .btn--hold {
   top: 46.1rem;
+}
+
+.btn--help {
+  top: 52rem;
 }
 
 .btn:active {
@@ -167,5 +198,84 @@ main {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.help-box {
+  position: absolute;
+  background-image: linear-gradient(to top left, #40084b 0%, #57090b 100%);
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 9.6rem;
+  border-radius: 0.9rem;
+  z-index: 100;
+}
+
+.win-message {
+  position: absolute;
+  background-image: linear-gradient(to top left, #0c020e 20%, #850409 80%);
+  padding: 3.2rem;
+  color: #fff;
+  font-size: 2.4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.9rem;
+}
+
+.help-box-title {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.help-box-list {
+  font-size: 2rem;
+  list-style: none;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.8rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: #cacaca;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+@media (max-width: 46em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 38em) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (max-width: 31em) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media (max-width: 23em) {
+  html {
+    font-size: 25%;
+  }
 }
